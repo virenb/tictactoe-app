@@ -13,7 +13,7 @@ h1 {
 }
 
 .container {
-  width: 40%;
+  width: 33.3%;
 }
 
 table {
@@ -21,8 +21,8 @@ table {
   width: 100%;
 }
 td {
-  width: 33.333%;
-  border: 6px solid #222;
+  width: 33.3%;
+  border: 4px solid rgb(0, 0, 0);
 }
 td:first-of-type {
   border-left-color: transparent;
@@ -43,4 +43,17 @@ td:after {
   content: '';
   display: block;
   margin-top: 100%;
+}
+
+#oButton, #xButton {
+  margin-top: 20px;
+}
+
+#oButton:focus {
+  color: red;
+}
+
+#xButton:focus {
+  color: blue;
+  font-weight: bold;
 }

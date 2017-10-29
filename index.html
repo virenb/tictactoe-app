@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Tic Tac Toe</title>
 </head>
 <body>
@@ -15,22 +15,31 @@
     <div class="table-responsive">
       <table id="board">
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="0"></td>
+        <td id="1"></td>
+        <td id="2"></td>
           </tr>
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="3"></td>
+        <td id="4"></td>
+        <td id="5"></td>
           </tr>
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="6"> </td>
+        <td id="7"></td>
+        <td id="8"></td>
           </tr>
       </table>
     </div>
+    <div class="row text-center">
+      <div id="pickIcon">
+        <input type="button" class="btn" name="O" id="oButton" value="O" onClick="pickO()" />
+        <input type="button" class="btn" name="X" id="xButton" value="X" onClick="pickX()" />
+        <p>Pick your icon</p>
+      </div>
+      <button class="btn" name="" id="playGame" onClick="playGame()">Play Again</button>
+    </div>
   </div>
+  <script src="app.js"></script>
 </body>
 </html>
