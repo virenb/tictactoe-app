@@ -10,16 +10,19 @@
 var humanPlayer;
 var aiPlayer;
 var gameRunning = false;
-var icons = ['O', 'X'];
+var icons = ["O", "X"];
 
 function pickO() {
-  console.log('you are O');
-  document.getElementById('oButton').classList.add("focus");
-  document.getElementById('xButton').disabled = true;
+  document.getElementById("oButton").classList.add("btn-primary");
+  document.getElementById("xButton").disabled = true;
+  humanPlayer = "O";
+  aiPlayer = "X";
 }
 
 function pickX() {
-  console.log('you are X');
-  document.getElementById('xButton').classList.add("focus");
-  document.getElementById('oButton').disabled = true;
+  document.getElementById("xButton").classList.add("btn-danger");
+  document.getElementById("oButton").disabled = true;
+  humanPlayer = "X";
+  aiPlayer = "O";
 }
+

@@ -49,11 +49,3 @@ td:after {
   margin-top: 20px;
 }
 
-#oButton:focus {
-  color: red;
-}
-
-#xButton:focus {
-  color: blue;
-  font-weight: bold;
-}
