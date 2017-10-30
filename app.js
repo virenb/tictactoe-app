@@ -9,6 +9,7 @@
 
 var humanPlayer;
 var aiPlayer;
+var board;
 var gameRunning = false;
 var icons = ["O", "X"];
 var turns = [];
@@ -20,6 +21,7 @@ function pickO() {
   document.getElementById("xButton").disabled = true;
   humanPlayer = "O";
   aiPlayer = "X";
+  playGame();
 }
 
 function pickX() {
@@ -27,6 +29,7 @@ function pickX() {
   document.getElementById("oButton").disabled = true;
   humanPlayer = "X";
   aiPlayer = "O";
+  playGame();
 }
 
 function reset() {
@@ -46,8 +49,19 @@ function clearSquares() {
   }
 }
 
+function turn(square) {
+  document.getElementById(square).innerText = humanPlayer;
+}
+
 function playGame() {
-  reset();
+  var squares = document.getElementsByClassName("square");
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('click', turnClick, false);
+  }
+}
+
+function turnClick(square) {
+  turn(square.target.id);
 }
 
 
