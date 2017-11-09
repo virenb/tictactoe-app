@@ -24,7 +24,7 @@
         <td id="5" class="square"></td>
           </tr>
         <tr>
-        <td id="6" class="square">x</td>
+        <td id="6" class="square"></td>
         <td id="7" class="square"></td>
         <td id="8" class="square"></td>
           </tr>
@@ -32,11 +32,11 @@
     </div>
     <div class="row text-center">
       <div id="pickIcon">
-        <input type="button" class="btn" name="O" id="oButton" onclick="setO" value="O" />
-        <input type="button" class="btn" name="X" id="xButton" onclick="setX" value="X" />
+        <input type="button" class="btn" name="O" id="oButton" onClick="setO()" value="O" />
+        <input type="button" class="btn" name="X" id="xButton" onClick="setX()" value="X" />
         <p>Pick your icon</p>
       </div>
-      <button class="btn" onclick="playAgain" id="play">Play Again</button>
+      <button class="btn" onClick="playAgain()" id="play">Play Again</button>
     </div>
   </div>
   <script src="app.js"></script>
