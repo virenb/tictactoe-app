@@ -19,12 +19,15 @@ let winningCombos = [
   [2, 4, 6]
 ];
 
+document.getElementById('board').style.pointerEvents = 'none';
+
 const setO = () => {
   oButton.classList.add('btn-primary');
   xButton.disabled = true;
   oButton.disabled = false;
   human = 'O';
   computer = 'X';
+  document.getElementById('board').style.pointerEvents = 'auto';
 };
 
 const setX = () => {
@@ -33,6 +36,7 @@ const setX = () => {
   oButton.disabled = true;
   human = 'X';
   computer = 'O';
+  document.getElementById('board').style.pointerEvents = 'auto';
 };
 
 const humanTurn = () => {
@@ -59,7 +63,7 @@ let sq2 = () => {
   squareId = 2;
   humanTurn();
 };
-document.getElementById("2").onclick = sq2;
+document.getElementById('2').onclick = sq2;
 
 let sq3 = () => {
   squareId = 3;
@@ -99,11 +103,12 @@ document.getElementById('8').onclick = sq8;
 
 const humanWinner = () => {
   for (var i = 0; i < winningCombos.length; i++) {
-    var filteredPlayerArr = humanPicks.filter(x => winningCombos[i].includes(x));
+    var filteredPlayerArr = humanPicks.filter(a => winningCombos[i].includes(a));
     if (filteredPlayerArr.length === 3) {
       winner = 'human';
       document.getElementById('winner').innerText = 'You win!';
       console.log('Player wins.');
+      document.getElementById('board').style.pointerEvents = 'none';
     }
   }
 };
@@ -138,6 +143,7 @@ const computerWinner = () => {
       winner = 'computer';
       document.getElementById('winner').innerText = 'Computer wins.';
       console.log('Computer wins.');
+      document.getElementById('board').style.pointerEvents = 'none';
     }
   }
 };
@@ -145,12 +151,13 @@ const computerWinner = () => {
 const checkComputerWin = () => {
   draw();
   computerWinner();
-  if (winner === 'computer') {playAgain();}
+  if (winner === 'computer') playAgain();
 };
 
 function draw() {
   if ((computerPicks.length + humanPicks.length) === 9) {
     document.getElementById('winner').innerText = 'Draw';
+    document.getElementById('board').style.pointerEvents = 'none';
     playAgain();
   }
 }
@@ -170,6 +177,6 @@ const playAgain = () => {
   oButton.classList.remove('btn-primary');
   let squares = document.getElementsByClassName('square');
   for (let i = 0; i < squares.length; i++) {
-    squares[i].innerText = "";
+    squares[i].innerText = '';
   }
 };
